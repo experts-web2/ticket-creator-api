@@ -12,6 +12,8 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/api/ticket", ticketRoute);
+
+
 https: app.use(function (req, res, next) {
   var allowedOrigins = [
     "http://localhost:3000/",

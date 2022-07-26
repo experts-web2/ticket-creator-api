@@ -26,3 +26,17 @@ exports.addTicket = catchAsync(async (req, res, next) => {
     });
   });
 });
+
+
+
+exports.getTicketList = catchAsync(async (req, res, next) => {
+  var sql = `select * from ticket`;
+  connection.query(sql, function (err, result) {
+    if (err) throw err;
+    res.status(STATUS_CODE.OK).json({
+      status: STATUS.SUCCESS,
+      message: SUCCESS_MSG.SUCCESS_MESSAGES.RETRIEVED,
+      tickets: result,
+    });
+  });
+});
