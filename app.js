@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "*",
+    origin: "http://card-management.s3-website-us-west-2.amazonaws.com",
   })
 );
 app.use("/api/ticket", ticketRoute);
