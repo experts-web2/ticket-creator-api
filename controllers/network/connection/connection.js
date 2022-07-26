@@ -1,11 +1,14 @@
 require("dotenv").config({ path: ".env" });
+
+const {HOST,USER,PASSWORD,DATABASE}=process.env;
+
 var mysql = require("mysql");
-const { HOST, USER, PASSWORD, DATABASE } = process.env;
+
 var connection = mysql.createConnection({
-  host: HOST,
-  user: USER,
-  password: PASSWORD,
-  database: DATABASE,
+  host: "card.chmujb9p9mc9.us-west-2.rds.amazonaws.com",
+  user: "admin",
+  password: "adminadmin",
+  database: "task",
 });
 
 connection.connect(function (err) {
